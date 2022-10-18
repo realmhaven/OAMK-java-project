@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GameController {
     Game g = new Game();
+    Player p = new Player();
 
+    // Game
     @PostMapping("/game")
     public String createGame() {
         g.createGame();
@@ -20,5 +22,12 @@ public class GameController {
     public String makemove(@RequestParam Integer move) {
         return g.play(move);
     }
+
+    // Player
+    @PostMapping("/player")
+    public String createPlayer(@RequestParam String name) {
+        return p.player(name);
+    }
+    
 
 }
