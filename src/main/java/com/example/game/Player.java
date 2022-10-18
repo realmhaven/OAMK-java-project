@@ -4,18 +4,19 @@ package com.example.game;
 import org.json.simple.JSONObject;
 
 public class Player {
-    String name;
-    Integer gamesPlayed;
-    Integer totalMoves;
+    private String name;
+    private Integer gamesPlayed;
+    private Integer totalMoves;
+
+    JSONObject playerFile = new JSONObject();
 
     public String player(String name) {
-        JSONObject file = new JSONObject();
-        file.put("name is : ", name);
-        return file.toString();
+        playerFile.put("name is : ", name);
+        return playerFile.toString();
     }
 
     public void savePlayer() {
-
+        
     }
 
     public void loadPlayer() {

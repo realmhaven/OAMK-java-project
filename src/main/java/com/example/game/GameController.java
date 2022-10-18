@@ -28,6 +28,5 @@ public class GameController {
     public String createPlayer(@RequestParam String name) {
         return p.player(name);
     }
-    
 
 }
