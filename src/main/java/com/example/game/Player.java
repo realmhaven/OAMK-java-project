@@ -1,26 +1,26 @@
 package com.example.game;
 
-// to import org.json, we added a dependency in POM.XML
+// to import org.json, we added a <dependency> in POM.XML
 import org.json.simple.JSONObject;
 
 public class Player {
     private String name;
-    private Integer gamesPlayed;
-    private Integer totalMoves;
+    private Integer gamesPlayed = 0;
+    private Integer totalMoves = 0;
 
-    JSONObject playerFile = new JSONObject();
-
-    public String player(String name) {
-        playerFile.put("name is : ", name);
-        return playerFile.toString();
+    // every time countMoves is called, totalMoves is incremented
+    public void countMoves() {
+        this.totalMoves += 1;
     }
 
-    public void savePlayer() {
-        
+    // Setter
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void loadPlayer() {
-
+    // Getter
+    public String getName() {
+        return this.name;
     }
 
 }

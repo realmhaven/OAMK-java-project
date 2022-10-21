@@ -1,0 +1,26 @@
+// Controller.java :
+
+Player
+    @PostMapping("/player")
+    public String postPlayer(@RequestParam String name) {
+        return p.addPlayer(name);
+    }
+
+    @GetMapping("/player")
+    public String getPlayer() {
+        return p.readPlayer();
+
+    }
+
+//Player.java
+    
+    JSONObject playerFile = new JSONObject();
+
+    public String addPlayer(String name) {
+        playerFile.put("name is : ", name);
+        return playerFile.toString();
+    }
+
+    public String readPlayer() {
+        return playerFile.toString();
+    }
